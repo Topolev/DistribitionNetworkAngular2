@@ -1,4 +1,4 @@
 <tr>
-    <th></th>
+    <th><input type="checkbox" [(ngModel)] = "checkAll" (change) = "onChangeStateCheckItem()"></th>
     <th *ngFor="let header of headers">{{header.externalName}}</th>
 </tr>

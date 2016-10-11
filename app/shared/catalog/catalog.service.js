@@ -32,7 +32,29 @@ var CatalogService = (function () {
             var field = _a[_i];
             item[field.innerName] = "";
         }
+        item["checked"] = false;
         this.catalogTable.items.push(item);
+    };
+    CatalogService.prototype.deleteCheckedItem = function () {
+        var items = this.catalogTable.items;
+        for (var i = 0; i < items.length; i++) {
+            if (items[i]["checked"] == true) {
+                items.splice(i, 1);
+                i--;
+            }
+        }
+    };
+    CatalogService.prototype.checkAllItem = function () {
+        for (var _i = 0, _a = this.catalogTable.items; _i < _a.length; _i++) {
+            var item = _a[_i];
+            item["checked"] = true;
+        }
+    };
+    CatalogService.prototype.uncheckAllItem = function () {
+        for (var _i = 0, _a = this.catalogTable.items; _i < _a.length; _i++) {
+            var item = _a[_i];
+            item["checked"] = false;
+        }
     };
     CatalogService = __decorate([
         core_1.Injectable(), 

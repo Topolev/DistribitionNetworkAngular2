@@ -16,6 +16,7 @@ var catalog_service_1 = require('../../shared/catalog/catalog.service');
 var CatalogComponent = (function () {
     function CatalogComponent(catalogService) {
         this.catalogService = catalogService;
+        this.checkAll = false;
     }
     CatalogComponent.prototype.ngOnInit = function () {
         this.headers = this.catalogService.getHeaders();
@@ -23,6 +24,10 @@ var CatalogComponent = (function () {
     };
     CatalogComponent.prototype.newItem = function () {
         console.log(this.catalogService.newItem());
+    };
+    CatalogComponent.prototype.deleteItem = function () {
+        console.log("DELETE");
+        this.catalogService.deleteCheckedItem();
     };
     CatalogComponent = __decorate([
         core_1.Component({

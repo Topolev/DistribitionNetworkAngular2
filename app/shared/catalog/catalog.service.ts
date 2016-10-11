@@ -5,6 +5,7 @@ import {Injectable} from '@angular/core';
 
 import { CatalogTableCable, ICatalogTable } from './catalog.table';
 import {IHeader} from "./catalog.header";
+import indexOf = require("core-js/fn/array/index-of");
 
 @Injectable()
 export class CatalogService{
@@ -30,6 +31,27 @@ export class CatalogService{
         for (let field of this.catalogTable.headers){
             item[field.innerName] = "";
         }
+        item["checked"] = false;
         this.catalogTable.items.push(item);
+    }
+
+    deleteCheckedItem() : void {
+        let items = this.catalogTable.items;
+        for (let i = 0; i < items.length; i++){
+            if (items[i]["checked"] == true){
+                items.splice(i,1);
+                i--;
+            }
+        }
+    }
+    checkAllItem(): void {
+        for (let item of this.catalogTable.items){
+            item["checked"] = true;
+        }
+    }
+    uncheckAllItem():void{
+        for (let item of this.catalogTable.items){
+            item["checked"] = false;
+        }
     }
 }

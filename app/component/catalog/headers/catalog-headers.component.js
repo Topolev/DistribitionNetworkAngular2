@@ -13,13 +13,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require("@angular/core");
 var catalog_service_1 = require('../../../shared/catalog/catalog.service');
+var catalog_item_component_1 = require("../item/catalog-item.component");
 var CatalogHeadersComponent = (function () {
     function CatalogHeadersComponent(catalogService) {
         this.catalogService = catalogService;
+        this.checkAll = false;
     }
     CatalogHeadersComponent.prototype.ngOnInit = function () {
         this.headers = this.catalogService.getHeaders();
     };
+    CatalogHeadersComponent.prototype.onChangeStateCheckItem = function () {
+        if (this.checkAll) {
+            this.catalogService.uncheckAllItem();
+        }
+        else {
+            this.catalogService.checkAllItem();
+        }
+    };
+    __decorate([
+        core_1.ViewChild(catalog_item_component_1.CatalogItemComponent), 
+        __metadata('design:type', catalog_item_component_1.CatalogItemComponent)
+    ], CatalogHeadersComponent.prototype, "itemComponent", void 0);
     CatalogHeadersComponent = __decorate([
         core_1.Component({
             selector: 'thead[catalog-headers]',

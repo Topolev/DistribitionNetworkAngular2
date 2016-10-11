@@ -1,0 +1,9 @@
+<td><input type="checkbox" [(ngModel)] = "item.checked">{{item.checked}}</td>
+<td *ngFor = "let header of headers">
+    <input [(ngModel)] = "item[header.innerName]"> {{item[header.innerName]}}
+</td>
+
+<div  class="context-menu">
+<div class="context-menu" *ngIf="showContextMenu">
+    <a href="">Delete</a>
+</div>

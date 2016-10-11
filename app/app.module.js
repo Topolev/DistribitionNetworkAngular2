@@ -18,7 +18,9 @@ var app_component_1 = require("./app.component");
 var catalog_component_1 = require("./component/catalog/catalog.component");
 var catalog_headers_component_1 = require("./component/catalog/headers/catalog-headers.component");
 var catalog_items_component_1 = require("./component/catalog/items/catalog-items.component");
+var catalog_item_component_1 = require("./component/catalog/item/catalog-item.component");
 var test_component_1 = require("./component/test.component");
+var contextmenu_component_1 = require("./component/contextmenu/contextmenu.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,10 +34,12 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 catalog_headers_component_1.CatalogHeadersComponent,
                 catalog_items_component_1.CatalogItemsComponent,
+                catalog_item_component_1.CatalogItemComponent,
                 catalog_component_1.CatalogComponent,
+                contextmenu_component_1.ContextmenuComponent,
                 test_component_1.TestComponent
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

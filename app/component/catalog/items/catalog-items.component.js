@@ -14,32 +14,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var catalog_service_1 = require('../../../shared/catalog/catalog.service');
 var CatalogItemsComponent = (function () {
-    function CatalogItemsComponent(catalogService, elRef) {
+    function CatalogItemsComponent(catalogService) {
         this.catalogService = catalogService;
-        this.elRef = elRef;
-        this.showContextMenu = false;
     }
     CatalogItemsComponent.prototype.ngOnInit = function () {
         this.headers = this.catalogService.getHeaders();
         this.items = this.catalogService.getItems();
-        this.$elRef = $(this.elRef.nativeElement);
-        this.$contextMenu = this.$elRef.find(".context-menu");
-        var offset = this.$elRef.offset();
-        this.itemX = offset.left;
-        this.itemY = offset.top;
-        console.log(this.itemX + " " + this.itemY);
     };
-    CatalogItemsComponent.prototype.newItem = function () {
-        console.log(this.catalogService.newItem());
-    };
-    CatalogItemsComponent.prototype.contextMenu = function (event) {
-        event.preventDefault();
-        this.showContextMenu = true;
-        this.changeCoordinateContextMenu(event.clientX, event.clientY);
-    };
-    CatalogItemsComponent.prototype.changeCoordinateContextMenu = function (x, y) {
-        console.log(x + " " + y);
-        this.$elRef.find(".context-menu").offset({ top: y, left: x });
+    CatalogItemsComponent.prototype.delete = function () {
+        console.log("DELETE ITEM");
     };
     CatalogItemsComponent = __decorate([
         core_1.Component({
@@ -47,7 +30,7 @@ var CatalogItemsComponent = (function () {
             templateUrl: './app/component/catalog/items/catalog-items.component.html',
             styleUrls: ['./app/component/catalog/items/catalog-items.component.css'],
         }), 
-        __metadata('design:paramtypes', [catalog_service_1.CatalogService, core_1.ElementRef])
+        __metadata('design:paramtypes', [catalog_service_1.CatalogService])
     ], CatalogItemsComponent);
     return CatalogItemsComponent;
 }());

@@ -1,23 +1,26 @@
 /**
  * Created by Vladimir on 11.10.2016.
  */
-import {Component, OnInit, ElementRef} from "@angular/core";
+/**
+ * Created by Vladimir on 11.10.2016.
+ */
+import {Component, OnInit, ElementRef, Input} from "@angular/core";
 
 import { CatalogService } from '../../../shared/catalog/catalog.service';
 import { IHeader } from "../../../shared/catalog/catalog.header";
 
-declare var $ : any;
+
 
 @Component({
-    selector : 'tbody[catalog-items]',
-    templateUrl : './app/component/catalog/items/catalog-items.component.html',
-    styleUrls: ['./app/component/catalog/items/catalog-items.component.css'],
+    selector : 'tr[catalog-item]',
+    templateUrl : './app/component/catalog/item/catalog-item.component.html',
 
 })
-export class CatalogItemsComponent implements OnInit{
+export class CatalogItemComponent implements OnInit{
+    @Input() item : any;
+
     headers : IHeader[];
     items : any[];
-
 
 
 
@@ -27,15 +30,13 @@ export class CatalogItemsComponent implements OnInit{
     ngOnInit(): void {
         this.headers = this.catalogService.getHeaders();
         this.items = this.catalogService.getItems();
-
     }
 
-    delete(){
-        console.log("DELETE ITEM")
+    checkItem() : void {
+        this.item.checked = true;
     }
-
-
-
-
+    uncheckItem() : void {
+        this.item.checked = false;
+    }
 
 }

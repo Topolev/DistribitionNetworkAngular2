@@ -12,6 +12,11 @@ var core_1 = require('@angular/core');
 var catalog_service_1 = require('./shared/catalog/catalog.service');
 var AppComponent = (function () {
     function AppComponent() {
+        this.optionsMenu = [
+            { title: 'Href1', click: function () { console.log('ex href1'); } },
+            { title: 'Href2', click: function () { console.log('ex href2'); } },
+            { title: 'Href235432423423423', click: function () { console.log('ex href3'); } }
+        ];
     }
     AppComponent = __decorate([
         core_1.Component({
