@@ -1,0 +1,9 @@
+<tr *ngFor = "let item of items"  (contextmenu)="contextMenu($event)">
+    <td><input type="checkbox"></td>
+    <td *ngFor = "let header of headers">
+        <input [(ngModel)] = "item[header.innerName]">
+    </td>
+    <div class="context-menu" *ngIf="showContextMenu">
+        <a href="">Delete</a>
+    </div>
+</tr>
