@@ -21,6 +21,8 @@ var catalog_items_component_1 = require("./component/catalog/items/catalog-items
 var catalog_item_component_1 = require("./component/catalog/item/catalog-item.component");
 var test_component_1 = require("./component/test.component");
 var contextmenu_component_1 = require("./component/contextmenu/contextmenu.component");
+var contextmenu_directive_1 = require("./component/contextmenu/contextmenu.directive");
+var parent_component_1 = require("./component/test/parent.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +39,9 @@ var AppModule = (function () {
                 catalog_item_component_1.CatalogItemComponent,
                 catalog_component_1.CatalogComponent,
                 contextmenu_component_1.ContextmenuComponent,
-                test_component_1.TestComponent
+                contextmenu_directive_1.ContextmenuDirective,
+                test_component_1.TestComponent,
+                parent_component_1.CountdownViewChildParentComponent
             ],
             bootstrap: [app_component_1.AppComponent],
         }), 

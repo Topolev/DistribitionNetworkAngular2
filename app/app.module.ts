@@ -14,6 +14,8 @@ import { CatalogItemsComponent } from "./component/catalog/items/catalog-items.c
 import { CatalogItemComponent } from "./component/catalog/item/catalog-item.component";
 import { TestComponent } from "./component/test.component";
 import { ContextmenuComponent } from "./component/contextmenu/contextmenu.component";
+import { ContextmenuDirective } from  "./component/contextmenu/contextmenu.directive";
+import { CountdownViewChildParentComponent } from "./component/test/parent.component";
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ContextmenuComponent } from "./component/contextmenu/contextmenu.compon
         CatalogItemComponent,
         CatalogComponent,
         ContextmenuComponent,
-        TestComponent
+        ContextmenuDirective,
+        TestComponent,
+        CountdownViewChildParentComponent
     ],
     bootstrap:    [ AppComponent ],
 })
